@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+    
+        <!--引导界面主题 方式1 很少用-->
+        <style name="FullScreen" parent="AppTheme">
+            <item name="windowNoTitle">true</item>
+            <item name="android:windowFullscreen">true</item>
+            <item name="windowActionBar">false</item>
+        </style>
+
+        <!--引导界面主题 方式2 常用-->
+        <style name="AppTheme.FullScreen">
+            <item name="windowNoTitle">true</item>
+            <item name="android:windowFullscreen">true</item>
+            <item name="windowActionBar">false</item>
+        </style>
+
+</resources>

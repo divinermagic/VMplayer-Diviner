@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/okhttp-3.2.0_147c78245afa0d89e0ea4b744d329a0d4fa73d8d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.0-alpha1_7363bf63f8bdab1f754a1c9f5702a60e676e49ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.0.0-alpha1_043084d4f40fd05a21f62c19c7204765bd4374c6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.0.0-alpha1_b25f0d7ce2b766cdca356247df3d1e20fbf52aa6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/okio-1.6.0_9af0251534d42c65a34af421129a6ecb3d8dc3bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.0.0-alpha1_2cd0dca66049c230fa1076c7c08eb4d5ad342d65.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/butterknife-7.0.1_f7168cd35c00c023e8b2d5899d37382d66286617.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/android-sdks/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/support-annotations-26.0.0-alpha1_720da00688656cbd12af0c9b87352422cb1a35b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/transition/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-transition-26.0.0-alpha1_c82a6d724f3b675324d56c87f82e4c7cb5699d20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-26.0.0-alpha1_27e3939e1e99182c2aa36ad2c4f7dcdf5b0f9fae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.2/f1bc476cc167b18e66c297df599b2377131a8947/gson-2.6.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/gson-2.6.2_9618aafe7f7eecb4870e71ef7fe62642179abfa0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.apkfuns.logutils/library/1.5.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3abe4ab519967d4299848aff7bd1253cde319e2f">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.apkfuns.logutils-library-1.5.1.1_3846f2f168129190389d3ac68d86437602989902.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-26.0.0-alpha1_67f9554dad23466302596ef5b285fe1578eee1ca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.roughike/bottom-bar/1.3.3/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="febdca0af7e75d9e2d621fd99be05dfbfd2667ed">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.roughike-bottom-bar-1.3.3_13a8fddf4c4d7e8299280c4c11e863b4d0bf9855.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/design/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-design-26.0.0-alpha1_5bc7f18a4fbd9d218de762ad7cf393f8f237b505.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support.constraint/constraint-layout/1.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support.constraint-constraint-layout-1.0.2_99f1dcefd72da33068287889061638965b6c5002.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/android-sdks/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_1ea11f534ccb5cc524a0aa347e0ce0173db21f4b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-26.0.0-alpha1_661139e0453ba84a0b20caa85f8206d305611365.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/support-core-ui/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-26.0.0-alpha1_c79c54c59551ab04d4c978779ae7e60117b3e13f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/support-fragment/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-26.0.0-alpha1_a53cd5d04e0495c6dda0c8d796f6900fc8320cf3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="/Users/Magic/Desktop/VMPlayer/手机影音/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-26.0.0-alpha1_7782bbf334671db9fe468f3d9940b0ffb747b1c0.jar" />
+    </item>
+
+</items>
