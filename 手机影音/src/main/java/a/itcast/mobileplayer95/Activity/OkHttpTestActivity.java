@@ -11,6 +11,9 @@ import java.util.List;
 
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.AreaBean;
+import a.itcast.mobileplayer95.bean.VideoBean;
+import a.itcast.mobileplayer95.fragment.Homepage.HomeMvp;
+import a.itcast.mobileplayer95.fragment.Homepage.HomePresenter;
 import a.itcast.mobileplayer95.http.BaseCallBack;
 import a.itcast.mobileplayer95.http.HttpManager;
 import a.itcast.mobileplayer95.utils.URLProviderUtil;
@@ -31,7 +34,27 @@ public class OkHttpTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ok_http_test);
 
-        loadData();
+        //loadData();
+        testHomePresenter();// TODO: 2017/9/19 testHomePresenter(); Presenter的独立测试 测试Presenter是否可用
+    }
+
+    // TODO: 2017/9/19 testHomePresenter 扩展 -Presenter的独立测试
+    private void testHomePresenter() {
+       HomePresenter presenter = new HomePresenter(new HomeMvp.View() {
+           @Override
+           public void setData(List<VideoBean> videoBeen) {
+                if (videoBeen.size() != 10){
+                    throw new RuntimeException("请求主页面的数据,返回数据不足10个");
+                }
+           }
+
+           @Override
+           public void onError(int code, Exception e) {
+                throw new RuntimeException("错误代码:"+code+"请求主页面的数据,发生异常,e:"+e);
+           }
+       });
+
+        presenter.loadData(0,10);
     }
 
     // TODO: 2017/9/7 loadData 加载数据

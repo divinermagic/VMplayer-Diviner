@@ -22,12 +22,11 @@ public class HomePresenter implements HomeMvp.Presenter {
         this.view = view;
     }
 
-
     @Override
     public void loadData(int offset, int size) {
-        LogUtils.e(TAG,"HomePresenter.loadData,开始加载数据");
         // TODO: 2017/9/19 获得主界面的URL
         String url = URLProviderUtil.getMainPageUrl(offset,size);
+        LogUtils.e(TAG,"HomePresenter.loadData,开始加载数据,url:"+url);
         // TODO: 2017/9/19 请求数据
         HttpManager.getInstance().get(url, new BaseCallBack<List<VideoBean>>() {
             @Override
@@ -43,9 +42,6 @@ public class HomePresenter implements HomeMvp.Presenter {
                 view.setData(videoBeen);
 
             }
-
         });
-
-
     }
 }

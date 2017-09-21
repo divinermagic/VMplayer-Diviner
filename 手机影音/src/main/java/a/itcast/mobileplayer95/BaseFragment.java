@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import com.apkfuns.logutils.LogUtils;
 
+import butterknife.ButterKnife;
+
 /**
  * 作者：Magic on 2017/9/7 02:34
  * 邮箱：bonian1852@163.com
@@ -19,6 +21,10 @@ public abstract class BaseFragment extends Fragment {
     // TODO: 2017/9/7  rootView 因为所有的Fragment都得处理这个rootView
     protected View rootView;
 
+    // TODO: 2017/9/21 把从第一个条目[起始位置]  10个为一页 改成个常量
+    protected static final int SIZE = 10; //[10个为一页]
+    protected int offset; //[起始位置]
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -28,9 +34,9 @@ public abstract class BaseFragment extends Fragment {
         if (rootView == null){
             rootView = inflater.inflate(getLayoutId(),null);
         }
+        ButterKnife.bind(this,rootView);
         initView();
         return rootView;
-
     }
 
     // TODO: 2017/9/7 protected abstract int getLayoutId(); 返回当前Fragment使用的布局的ID.
@@ -38,4 +44,10 @@ public abstract class BaseFragment extends Fragment {
 
     // TODO: 2017/9/7 protected abstract void initView(); 处理界面初始化.
     protected abstract void initView();
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
 }
