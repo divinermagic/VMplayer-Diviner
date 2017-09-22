@@ -7,6 +7,7 @@ import com.google.gson.JsonSyntaxException;
 import com.itheima.vmplayer.bean.YueDanBean;
 import com.itheima.vmplayer.http.OkHttpManager;
 import com.itheima.vmplayer.http.StringCallBack;
+import com.itheima.vmplayer.util.LogUtils;
 import com.itheima.vmplayer.util.URLProviderUtil;
 
 
@@ -31,7 +32,9 @@ public class YueDanFragmentPresenter implements YueDanFragmentContract.Presenter
     @Override
     public void getData(int offset, int size) {
         Log.i(TAG, "getData: "+ URLProviderUtil.getMainPageYueDanUrl(offset, size));
-        OkHttpManager.getOkHttpManager().asyncGet(URLProviderUtil.getMainPageYueDanUrl(offset, size), viewRoot, new StringCallBack() {
+        String url = URLProviderUtil.getMainPageYueDanUrl(offset,size);
+        LogUtils.e(TAG,"YueDanFragmentPresenter.getData,url:"+url);
+        OkHttpManager.getOkHttpManager().asyncGet(url, viewRoot, new StringCallBack() {
             @Override
             public void onError(Call call, Exception e) {
                 viewRoot.setError(e.getLocalizedMessage());

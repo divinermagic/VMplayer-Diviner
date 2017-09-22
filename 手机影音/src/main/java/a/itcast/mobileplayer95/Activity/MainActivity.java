@@ -17,7 +17,9 @@ import com.roughike.bottombar.OnMenuTabClickListener;
 
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.fragment.Homepage.HomeFragment;
+import a.itcast.mobileplayer95.fragment.Mvpage.MvFragment;
 import a.itcast.mobileplayer95.fragment.TestFragment;
+import a.itcast.mobileplayer95.fragment.yuedanpage.YueDanFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -46,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         // TODO: 2017/9/6 初始化 Fragment 集合  append:附加 要先初始化集合 才能显示界面
         sparseArray = new SparseArray<>();
         sparseArray.append(R.id.bottom_home, new HomeFragment());
-        sparseArray.append(R.id.bottom_mv, TestFragment.newInstance("MV"));
+        sparseArray.append(R.id.bottom_mv, new MvFragment());
         sparseArray.append(R.id.bottom_vbang, TestFragment.newInstance("V榜"));
-        sparseArray.append(R.id.bottom_yuedan, TestFragment.newInstance("悦单"));
+        sparseArray.append(R.id.bottom_yuedan, new YueDanFragment());
 
         // TODO: 2017/9/5 处理底部栏 bottom-bar  1.3.3的版本不能在布局xml文件里直接使用 只能在代码中实现
         // TODO: 2017/9/5  在build.gradle中导包 compile 'com.roughike:bottom-bar:1.3.3'
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         BottomBar bottomBar = BottomBar.attach(this, savedInstanceState);
         bottomBar.setItemsFromMenu(R.menu.bottombar, new OnMyMenuTabClickListener());
 
-        com.apkfuns.logutils.LogUtils.e(TAG,"MainActivity.onCreate,sparseArray:"+sparseArray);
+        //com.apkfuns.logutils.LogUtils.e(TAG,"MainActivity.onCreate,sparseArray:"+sparseArray);
     }
 
     // TODO: 2017/9/5 动作8
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             //Fragment fragment = TestFragment.newInstance("这是一个测试界面");
             // TODO: 2017/9/6 切换到当前按钮对应的Fragment
             // TODO: 2017/9/6 sparseArray.get(menuItemId) 要一个ID 就像是HashMap<Integer,E>的ID,直接给予目录的ID menuItemId
-            com.apkfuns.logutils.LogUtils.e(TAG,"OnMyMenuTabClickListener.onMenuTabSelected,sparseArray:"+sparseArray);
+            //com.apkfuns.logutils.LogUtils.e(TAG,"OnMyMenuTabClickListener.onMenuTabSelected,sparseArray:"+sparseArray);
             Fragment fragment = sparseArray.get(menuItemId);
             switchFragment(fragment);
         }

@@ -22,8 +22,10 @@ public abstract class BaseFragment extends Fragment {
     protected View rootView;
 
     // TODO: 2017/9/21 把从第一个条目[起始位置]  10个为一页 改成个常量
-    protected static final int SIZE = 10; //[10个为一页]
+
     protected int offset; //[起始位置]
+
+    protected static final int SIZE = 10; //[10个为一页]
 
     @Nullable
     @Override
