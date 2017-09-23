@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="a.itcast.mobileplayer95">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,9 +22,9 @@
         </activity>
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.SettingsActivity" />
-        <activity android:name=".Activity.OkHttpTestActivity">
-
-        </activity>
+        <activity android:name=".Activity.OkHttpTestActivity" />
+        <activity android:name=".Activity.WebViewActivity" />
+        <activity android:name=".Activity.PlayerActivity"></activity>
     </application>
 
 </manifest>

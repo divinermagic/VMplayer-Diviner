@@ -1,5 +1,7 @@
 package a.itcast.mobileplayer95.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Point;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -11,6 +13,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import a.itcast.mobileplayer95.Activity.PlayerActivity;
+import a.itcast.mobileplayer95.Activity.WebViewActivity;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.Util;
@@ -41,22 +45,89 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         @Bind(R.id.tv_description)
         TextView tvDescription;
 
-        public MyViewHolder(View itemView) {
+        // TODO: 2017/9/23 当前条目的类型
+        int tag;
+
+        public MyViewHolder(final View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
 
             // TODO: 2017/9/21 初始化图片大小 计算规则:要显示的高度:要显示的宽度(屏幕宽度)=图片的原始高度:图片的原始宽度 [未知的是:要显示的高度]
             // TODO: 2017/9/21 [要显示的高度] 计算规则:要显示的高度 = 图片的原始高度:图片的原始宽度 * 要显示的宽度(屏幕宽度
             // TODO: 2017/9/21 import android.graphics.Point;
-            Point point = Util.computeImgSize(640,540,itemView.getContext());
+            Point point = Util.computeImgSize(640, 540, itemView.getContext());
             ivContentimg.getLayoutParams().width = point.x;
             ivContentimg.getLayoutParams().height = point.y;
             ivContentimg.requestLayout();
             // TODO: 2017/9/21 viewbg:给所有的条目最上面添加个灰色的阴影 让字体看的更清晰
             viewbg.getLayoutParams().width = point.x;
             viewbg.getLayoutParams().height = point.y;
-            viewbg.requestLayout();;
+            viewbg.requestLayout();
 
+            // TODO: 2017/9/23 RecylerView 本身是没有条目点击监听的 (这是优势而不是缺点)
+            /*
+                但是我们的recyclerView是设置了我们自定义的HomeAdapter的
+                自定义的HomeAdapter里面有itemView
+                我们直接给itemView设置点击监听就可以了
+             */
+            // TODO: 2017/9/23 给RecylerView.setAdapter中的itemView注册监听 就相当于给给RecylerView设置了点击监听
+            itemView.setOnClickListener(new OnMvClickListener());
+
+            // TODO: 2017/9/23 这一块代码 说明 给RecylerView中 可以给任意一个控件注册点击监听 而不像在ListView里会冲突
+//            ivType.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(itemView.getContext(), "好不好"+MyViewHolder.this.getAdapterPosition(), Toast.LENGTH_SHORT).show();
+//                }
+//            });
+
+        }
+
+        // TODO: 2017/9/23 给RecylerView.setAdapter中的itemView注册监听 就相当于给给RecylerView设置了点击监听
+        private class OnMvClickListener implements View.OnClickListener {
+            /*
+             * 这一块相当于提取了一个监听对象 这个监听对象在我每一个MyViewHolder对象里面
+             * 被新建一个监听并注册到我们的[ItemView]条目上去
+             */
+            @Override
+            //MyViewHolder是onClick的外部类
+            public void onClick(View v) {
+
+                Context context = itemView.getContext();
+
+                // TODO: 2017/9/23 获取当前被点击条目的数据
+                VideoBean videoBean = videoBeen.get(MyViewHolder.this.getAdapterPosition());
+
+                // TODO: 2017/9/23 Toast获取当前被点击的条目
+                // Toast.makeText(itemView.getContext(), "嘿嘿嘿"+MyViewHolder.this.getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(itemView.getContext(), getAdapterPosition() + "tag:" + tag, Toast.LENGTH_SHORT).show();
+                // TODO: 2017/9/23 转到当前界面的响应界面
+                Intent mIntent = new Intent();
+                // TODO: 2017/9/23 因为此处的tag找不到,但是因为这个onclick是在MyViewHolder里面写的
+                // TODO: 2017/9/23 所以我们可以在MyViewHolder里面直接定义个 int tag; 并且在onBindViewHolder中的 holder.tag = tag;
+                switch (tag) {
+                    case 0:
+                    case 4:
+                    case 10:
+                        // TODO: 2017/9/23 [itemView.getContext()]为什么在内部类里面调用itemView? 因为内部类可以访问外部类,
+                        mIntent = new Intent(context, WebViewActivity.class);//打开WebViewActivity
+                        mIntent.putExtra("url",videoBean.getUrl());
+                        itemView.getContext().startActivity(mIntent);
+                        break;
+                    case 1:
+                    case 5:
+                    case 7:
+                        mIntent = new Intent(context, PlayerActivity.class);
+                        mIntent.putExtra("url",videoBean.getUrl());
+                        mIntent.putExtra("title",videoBean.getTitle());
+                        context.startActivity(mIntent);
+                        break;
+                    case 2:
+                    case 3:
+                        break;
+
+                }
+            }
         }
     }
 
@@ -93,6 +164,50 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
         // TODO: 2017/9/21 Glide 加载图片 但直接这样做的话 图片加载出来有大有小 需要加载出来界面的时候 把图片固定下 在ButterKnife.bind(this, itemView)下
         // TODO: 2017/9/21 1.上下文 是为了获取data目录,2.图片的路径 3.ImageView 就自动加载起来了 然后图片显示的时候 要重新计算图片大小
         Glide.with(holder.itemView.getContext()).load(videoBean.getPosterPic()).into(holder.ivContentimg);
+
+        final int tag;
+        String type = videoBean.getType();
+        if ("ACTIVITY".equalsIgnoreCase(type)) {//打开页面
+            tag = 0;
+            holder.ivType.setImageResource(R.drawable.home_page_activity);
+        } else if ("VIDEO".equalsIgnoreCase(type)) {//首播，点击进去显示MV描述，相关MV
+            tag = 1;
+            holder.ivType.setImageResource(R.drawable.home_page_video);
+        } else if ("WEEK_MAIN_STAR".equalsIgnoreCase(type)) {//(悦单)点击进去跟显示悦单详情一样
+            tag = 2;
+            holder.ivType.setImageResource(R.drawable.home_page_star);
+        } else if ("PLAYLIST".equalsIgnoreCase(type)) {//(悦单)点击进去跟显示悦单详情一样
+            tag = 3;
+            holder.ivType.setImageResource(R.drawable.home_page_playlist);
+        } else if ("AD".equalsIgnoreCase(type)) {
+            tag = 4;
+            holder.ivType.setImageResource(R.drawable.home_page_ad);
+        } else if ("PROGRAM".equalsIgnoreCase(type)) {//跳到MV详情
+            tag = 5;
+            holder.ivType.setImageResource(R.drawable.home_page_program);
+        } else if ("bulletin".equalsIgnoreCase(type)) {
+            tag = 6;
+            holder.ivType.setImageResource(R.drawable.home_page_bulletin);
+        } else if ("fanart".equalsIgnoreCase(type)) {
+            tag = 7;
+            holder.ivType.setImageResource(R.drawable.home_page_fanart);
+        } else if ("live".equalsIgnoreCase(type)) {
+            tag = 8;
+            holder.ivType.setImageResource(R.drawable.home_page_live);
+        } else if ("LIVENEW".equalsIgnoreCase(type) || ("LIVENEWLIST".equals(type))) {
+            tag = 9;
+            holder.ivType.setImageResource(R.drawable.home_page_live_new);
+        } else if ("INVENTORY".equalsIgnoreCase(videoBean.getType())) {//打开页面
+            tag = 10;
+            holder.ivType.setImageResource(R.drawable.home_page_project);
+        } else {
+            tag = -100;
+            holder.ivType.setImageResource(0);
+        }
+
+        // TODO: 2017/9/23 holder.tag = tag; 更新当前条目的类型
+        holder.tag = tag;
+
     }
 
     @Override

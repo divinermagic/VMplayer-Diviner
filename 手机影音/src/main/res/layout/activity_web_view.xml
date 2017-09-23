@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="a.itcast.mobileplayer95.Activity.WebViewActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"/>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!--自定义 ProgressBar 的颜色 从系统的文件里面找的-->
+    <!--style="@style/Widget.AppCompat.ProgressBar.Horizontal"可以显示具体进度的水平进度条-->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:progress="40"
+        android:progressDrawable="@drawable/webview_progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_height="3dp" />
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </WebView>
+
+</LinearLayout>

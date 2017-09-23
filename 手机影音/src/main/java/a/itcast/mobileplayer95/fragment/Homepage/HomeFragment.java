@@ -27,9 +27,9 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
     @Bind(R.id.recyclerView)
     RecyclerView recyclerView;
 
-        // TODO: 2017/9/21 SwipeRefreshLayout 下拉刷新控件
-        @Bind(R.id.refresh)
-        SwipeRefreshLayout refreshLayout;
+    // TODO: 2017/9/21 SwipeRefreshLayout 下拉刷新控件
+    @Bind(R.id.refresh)
+    SwipeRefreshLayout refreshLayout;
 
     private HomeMvp.Presenter presenter;
 
@@ -64,9 +64,9 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
 
         // TODO: 2017/9/19 填充 recyclerView 列表
         LinearLayoutManager layout = new LinearLayoutManager(getContext());//线性布局的管理器
-       // GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);//九宫格布局管理器
+        // GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);//九宫格布局管理器
         //StaggeredGridLayoutManager staggeredGridLayoutManager =
-                //new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);//瀑布流布局管理器
+        //new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);//瀑布流布局管理器
         layout.setOrientation(LinearLayoutManager.VERTICAL);//垂直形式的列表
         recyclerView.setLayoutManager(layout);
 
@@ -80,7 +80,6 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
 
         // TODO: 2017/9/21 上拉刷新 给RecyclerView添加个滚动状态  转换匿名内部类 为 内部类 并提取出去 Refactor/convert Anonymous to Inner...
         recyclerView.addOnScrollListener(new OnMainScrollListener());
-
         // TODO: 2017/9/21 下拉刷新控件的监听
         // TODO: 2017/9/21 转换匿名内部类 为 内部类 Refactor/convert Anonymous to Inner... 需要鼠标移动到OnRefreshListener上
         refreshLayout.setOnRefreshListener(new OnMainRefreshListener());
@@ -91,7 +90,7 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
         LogUtils.e(TAG, "HomeFragment.setData,videoBeen=" + videoBeen.size());
 
         // TODO: 2017/9/21 意思是下拉刷新已经结束了 状态清除掉了
-        if (isReefresh){
+        if (isReefresh) {
             // TODO: 2017/9/21 下拉刷新需要清除原有的数据
             this.videoBeen.clear();
             isReefresh = false;
@@ -120,7 +119,7 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
         @Override
         public void onRefresh() {
             offset = 0;
-            presenter.loadData(offset,SIZE);
+            presenter.loadData(offset, SIZE);
             // TODO: 2017/9/21 isRefresh 定义为成员变量 一旦等于true 就是在刷新 需要在setData里面做判断
             isReefresh = true;
         }
@@ -137,7 +136,7 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
          */
         // TODO: 2017/9/21 RecyclerView.OnScrollListener.onScrollStateChanged  当滚动状态发生变化的时候被调用
         public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-            LogUtils.e(TAG,"OnMainScrollListener.onScrollStateChanged,newState="+newState);
+            LogUtils.e(TAG, "OnMainScrollListener.onScrollStateChanged,newState=" + newState);
 
             // TODO: 2017/9/21 onScrollStateChanged 获取当前可见的最后一个条目位置 只有线性布局才可以
             LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
@@ -145,8 +144,8 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
 
             //如果状态变为静止 并且是列表的最后一个 则准备加载下一页数据
             //[hasMore]:标志位 如果没有更多数据了 那么就不去加载了 [转成成员变量] true 表示有更多数据 false 表示没有更多数据
-            if (newState == 0 && lastVisibleItemPosition == videoBeen.size() -1 && hasMore){
-                presenter.loadData(offset,SIZE);
+            if (newState == 0 && lastVisibleItemPosition == videoBeen.size() - 1 && hasMore) {
+                presenter.loadData(offset, SIZE);
 
             }
         }
@@ -154,7 +153,7 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
         @Override
         // TODO: 2017/9/21 RecyclerView.OnScrollListener.onScrolled 不断的获取当前滚动位置时
         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-            LogUtils.e(TAG,"OnMainScrollListener.onScrolled,");
+            LogUtils.e(TAG, "OnMainScrollListener.onScrolled,");
         }
     }
 }

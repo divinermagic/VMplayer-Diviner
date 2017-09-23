@@ -12,7 +12,6 @@ import a.itcast.mobileplayer95.BaseFragment;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.MvPageAdapter;
 import a.itcast.mobileplayer95.bean.AreaBean;
-import a.itcast.mobileplayer95.utils.LogUtils;
 import butterknife.Bind;
 
 /**
