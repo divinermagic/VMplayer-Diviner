@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--播放时间-->
+    <TextView
+        android:textColor="#fff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00/01:01"
+        android:textSize="16sp"
+        android:layout_gravity="right"
+        />
+    <!--播放进度条-->
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="40"
+        android:progressDrawable="@drawable/audio_seekbar_drawable"
+        android:thumb="@drawable/audio_seek_thumb"
+        style="@style/Widget.AppCompat.SeekBar"
+        />
+    
+    <!--控制按钮-->
+</LinearLayout>

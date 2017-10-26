@@ -15,7 +15,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.activity.MVDetailActivity;
 import com.itheima.vmplayer.bean.VideoBean;
-import com.itheima.vmplayer.fragment.vbangpage.VbangContract;
 
 import java.util.List;
 

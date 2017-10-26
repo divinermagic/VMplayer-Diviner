@@ -117,14 +117,16 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
                     case 1:
                     case 5:
                     case 7:
+                    case 2:
+                    case 3:
                         mIntent = new Intent(context, PlayerActivity.class);
                         mIntent.putExtra("url",videoBean.getUrl());
                         mIntent.putExtra("title",videoBean.getTitle());
                         context.startActivity(mIntent);
                         break;
-                    case 2:
-                    case 3:
-                        break;
+//                    case 2:
+//                    case 3:
+//                        break;
 
                 }
             }

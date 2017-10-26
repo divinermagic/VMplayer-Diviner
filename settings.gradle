@@ -1,1 +1,1 @@
-include ':app', ':手机影音', ':testurl'
+include ':app', ':手机影音', ':testurl', ':testlistview'

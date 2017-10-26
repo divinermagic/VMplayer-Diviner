@@ -20,5 +20,8 @@ public interface HomeMvp  {
     interface View{
         void setData(List<VideoBean> videoBeen);//请求到数据就SetData
         void onError(int code, Exception e);//没请求到数据就OnError就爆个异常出来
+        //﻿数据加载对话框
+        void showLoading();
+        void dismisLoading();
     }
 }

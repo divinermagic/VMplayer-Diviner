@@ -10,12 +10,14 @@ public class LogUtils {
     private static final boolean ENABLE = true;
 
     public static void e(String tag,String msg){
-        if (ENABLE)
-            Log.e("itcast_"+tag,msg);
+        if (ENABLE) {
+            Log.e("itcast_" + tag, msg);
+        }
     }
 
     public static void e(Class cls,String msg){
-        if (ENABLE)
-            Log.e("itcast_"+cls.getSimpleName(),msg);
+        if (ENABLE) {
+            Log.e("itcast_" + cls.getSimpleName(), msg);
+        }
     }
 }

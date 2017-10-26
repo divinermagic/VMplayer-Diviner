@@ -16,7 +16,6 @@ import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.activity.MVDetailActivity;
 import com.itheima.vmplayer.bean.VideoBean;
 
-
 import java.util.ArrayList;
 
 import butterknife.Bind;

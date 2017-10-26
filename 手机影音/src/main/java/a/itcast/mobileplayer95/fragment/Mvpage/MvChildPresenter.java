@@ -25,6 +25,8 @@ public class MvChildPresenter implements MvChildMvp.Presenter {
 
     @Override
     public void loadData(String area, int size, int offset) {
+
+
         String url = URLProviderUtil.getMVListUrl(area,offset,size);
         LogUtils.e(TAG,"MvChildPresenter.loadData,url="+url);
         HttpManager.getInstance().get(url, new BaseCallBack<MvListBean>() {

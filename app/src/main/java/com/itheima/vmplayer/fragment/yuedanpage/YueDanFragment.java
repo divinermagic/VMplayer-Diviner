@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.bumptech.glide.Glide;
 import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.adapter.YueDanFragmentAdapter;
 import com.itheima.vmplayer.bean.YueDanBean;
@@ -22,7 +21,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by wschun on 2016/8/31.

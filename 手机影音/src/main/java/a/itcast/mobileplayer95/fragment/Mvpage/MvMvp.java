@@ -18,5 +18,7 @@ public interface MvMvp {
     interface View{
         void setData(List<AreaBean> areaBeen);
         void onError(int code, Exception e);
+        void showLoading();
+        void dismissLoading();
     }
 }

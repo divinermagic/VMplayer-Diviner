@@ -1,7 +1,7 @@
 package a.itcast.mobileplayer95.Activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
@@ -51,6 +51,16 @@ public class OkHttpTestActivity extends AppCompatActivity {
            @Override
            public void onError(int code, Exception e) {
                 throw new RuntimeException("错误代码:"+code+"请求主页面的数据,发生异常,e:"+e);
+           }
+
+           @Override
+           public void showLoading() {
+
+           }
+
+           @Override
+           public void dismisLoading() {
+
            }
        });
 

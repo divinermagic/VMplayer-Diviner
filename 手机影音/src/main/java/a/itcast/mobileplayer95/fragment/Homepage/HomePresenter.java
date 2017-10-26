@@ -5,7 +5,6 @@ import java.util.List;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.http.BaseCallBack;
 import a.itcast.mobileplayer95.http.HttpManager;
-import a.itcast.mobileplayer95.utils.LogUtils;
 import a.itcast.mobileplayer95.utils.URLProviderUtil;
 
 /**
@@ -24,6 +23,10 @@ public class HomePresenter implements HomeMvp.Presenter {
 
     @Override
     public void loadData(int offset, int size) {
+
+        // TODO: 2017/10/17 显示加载对话框
+        view.showLoading();
+
         // TODO: 2017/9/19 获得主界面的URL
         String url = URLProviderUtil.getMainPageUrl(offset,size);
 //        LogUtils.e(TAG,"HomePresenter.loadData,开始加载数据,url:"+url);
@@ -32,6 +35,8 @@ public class HomePresenter implements HomeMvp.Presenter {
             @Override
             public void onFailure(int code, Exception e) {
                 view.onError(code,e);
+                //不管成功或者失败都要把 对话框隐藏掉
+                view.dismisLoading();
             }
 
             @Override
@@ -40,6 +45,8 @@ public class HomePresenter implements HomeMvp.Presenter {
                 // TODO: 2017/9/19 如果成功
 //                LogUtils.e(TAG,"HomePresenter.onSuccess,成功获取到数据");
                 view.setData(videoBeen);
+                //不管成功或者失败都要把 对话框隐藏掉
+                view.dismisLoading();
 
             }
         });

@@ -22,7 +22,6 @@ import com.itheima.vmplayer.fragment.yuedanpage.YueDanFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

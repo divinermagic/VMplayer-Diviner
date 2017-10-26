@@ -14,7 +14,6 @@ import com.itheima.vmplayer.http.OkHttpManager;
 import com.itheima.vmplayer.http.StringCallBack;
 import com.itheima.vmplayer.util.URLProviderUtil;
 
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

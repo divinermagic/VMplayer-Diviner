@@ -71,5 +71,15 @@ public class MvFragment extends BaseFragment implements MvMvp.View {
         Toast.makeText(getContext(), "请求数据发生错误,代码为:" + code, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void showLoading() {
+        showLoadingDialog();
+    }
+
+    @Override
+    public void dismissLoading() {
+        dismissLoadingDialog();
+    }
+
 
 }

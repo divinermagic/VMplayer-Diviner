@@ -23,17 +23,21 @@ public class MvPresenter implements MvMvp.Presenter {
     @Override
     public void loadData() {
 
+        view.showLoading();
+
         String url = URLProviderUtil.getMVareaUrl();//[getMVareaUrl]:获取MV区域Url
         // TODO: 2017/9/22 在HttpManager.getInstance().get(url地址,new BaseCallBack<需要一个泛型>)
         HttpManager.getInstance().get(url, new BaseCallBack<List<AreaBean>>() {
             @Override
             public void onFailure(int code, Exception e) {
                 view.onError(code,e);
+                view.dismissLoading();
             }
 
             @Override
             public void onSuccess(List<AreaBean> areaBeen) {
                 view.setData(areaBeen);
+                view.dismissLoading();
             }
         });
     }

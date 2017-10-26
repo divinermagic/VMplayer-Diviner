@@ -18,6 +18,9 @@ public interface YueDanMvp {
     interface View{
         void setData(List<YueDanBean.PlayListsBean> playLists);
         void setError(int code, Exception e);
+        //数据加载对话框
+        void showLoading();
+        void dismisLoading();
     }
 
 }

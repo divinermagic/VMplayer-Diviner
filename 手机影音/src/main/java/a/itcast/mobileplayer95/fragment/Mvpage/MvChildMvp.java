@@ -18,5 +18,6 @@ public interface MvChildMvp {
     interface View{
         void setData(List<VideoBean> videos);
         void onError(int code, Exception e);
+
     }
 }

@@ -16,7 +16,6 @@ import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.activity.YueDanDetailActivity;
 import com.itheima.vmplayer.bean.YueDanBean;
 
-
 import java.util.List;
 
 import butterknife.Bind;

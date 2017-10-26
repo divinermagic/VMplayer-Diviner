@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.adapter.RelativeMvRecycleAdapter;
 import com.itheima.vmplayer.bean.MVDetailBean;

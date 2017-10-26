@@ -2,7 +2,6 @@ package com.itheima.vmplayer.fragment.mvpage;
 
 import com.itheima.vmplayer.BasePresenter;
 import com.itheima.vmplayer.BaseView;
-import com.itheima.vmplayer.bean.AreaBean;
 import com.itheima.vmplayer.bean.VideoBean;
 
 import java.util.List;

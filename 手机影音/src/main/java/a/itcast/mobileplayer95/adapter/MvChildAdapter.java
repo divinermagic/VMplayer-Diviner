@@ -1,5 +1,6 @@
 package a.itcast.mobileplayer95.adapter;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import a.itcast.mobileplayer95.Activity.PlayerActivity;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.Util;
@@ -57,6 +59,25 @@ public class MvChildAdapter extends RecyclerView.Adapter<MvChildAdapter.MyViewHo
             viewbgs.getLayoutParams().width = point.x;
             viewbgs.getLayoutParams().height = point.y;
             viewbgs.requestLayout();
+
+            // TODO: 2017/10/17 注册当前条目的点击监听
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    //获取被点击条目的数据
+                    VideoBean videoBean = videos.get(MyViewHolder.this.getAdapterPosition());
+
+                    //跳转到播放界面
+                    Intent intent = new Intent(view.getContext(), PlayerActivity.class);
+
+                    intent.putExtra("url",videoBean.getUrl());
+                    intent.putExtra("title",videoBean.getTitle());
+
+                    view.getContext().startActivity(intent);
+
+                }
+            });
         }
     }
 

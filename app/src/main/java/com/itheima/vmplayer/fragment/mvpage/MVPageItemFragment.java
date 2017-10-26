@@ -16,7 +16,6 @@ import com.itheima.vmplayer.fragment.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

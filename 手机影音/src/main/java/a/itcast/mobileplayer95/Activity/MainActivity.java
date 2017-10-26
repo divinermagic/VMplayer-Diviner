@@ -1,10 +1,11 @@
 package a.itcast.mobileplayer95.Activity;
 
 
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -12,13 +13,15 @@ import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.fragment.Homepage.HomeFragment;
 import a.itcast.mobileplayer95.fragment.Mvpage.MvFragment;
-import a.itcast.mobileplayer95.fragment.TestFragment;
+import a.itcast.mobileplayer95.fragment.vbangpage.VbangFragment;
 import a.itcast.mobileplayer95.fragment.yuedanpage.YueDanFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         sparseArray = new SparseArray<>();
         sparseArray.append(R.id.bottom_home, new HomeFragment());
         sparseArray.append(R.id.bottom_mv, new MvFragment());
-        sparseArray.append(R.id.bottom_vbang, TestFragment.newInstance("V榜"));
+        sparseArray.append(R.id.bottom_vbang, new VbangFragment());
         sparseArray.append(R.id.bottom_yuedan, new YueDanFragment());
 
         // TODO: 2017/9/5 处理底部栏 bottom-bar  1.3.3的版本不能在布局xml文件里直接使用 只能在代码中实现
@@ -110,7 +113,35 @@ public class MainActivity extends AppCompatActivity {
     private void switchFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         FragmentTransaction replace = transaction.replace(R.id.container, fragment);
-
         transaction.commit();
+    }
+
+
+    // TODO: 2017/10/17 处理返回键 compile 'com.afollestad.material-dialogs:commons:0.9.0.2'
+    @Override
+    public void onBackPressed() {
+        //显示退出提示的对话框
+        MaterialDialog.Builder builder = new MaterialDialog.Builder(this);
+
+        builder.title("退出提示！")
+                .content("确定要退出应用吗？")
+                .neutralText("点错了")
+                .onNeutral(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        //点击 「点错了」 直接把对话框隐藏掉
+                        dialog.dismiss();
+                    }
+                })
+                .positiveText("确定")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        dialog.dismiss();
+                        finish();
+                    }
+                });
+
+        builder.show();
     }
 }

@@ -113,6 +113,18 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
 
     }
 
+    //显示对话框
+    @Override
+    public void showLoading() {
+        showLoadingDialog();
+    }
+
+    //隐藏对话框
+    @Override
+    public void dismisLoading() {
+        dismissLoadingDialog();
+    }
+
     // TODO: 2017/9/21 下拉刷新控件的监听
     // TODO: 2017/9/21 转换匿名内部类 为 内部类 Refactor/convert Anonymous to Inner... 需要鼠标移动到OnRefreshListener上
     private class OnMainRefreshListener implements SwipeRefreshLayout.OnRefreshListener {

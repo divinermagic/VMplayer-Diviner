@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Point;
-import android.text.TextUtils;
 import android.util.Log;
 
 //import com.itheima.vmplayer.bean.MusicBean;
@@ -16,7 +15,7 @@ import android.util.Log;
  */
 
 public class Util {
-    private static final String TAG ="Util" ;
+    private static final String TAG ="itcast_Util" ;
 
     public static void printCursor(Cursor cursor){
         if (cursor==null)
@@ -37,13 +36,12 @@ public class Util {
 
     }
 
+    // TODO: 2017/10/17  Util.formatName 格式化文件名 dida.mp3 --> dida
    public static String formatName(String name){
-       if (!TextUtils.isEmpty(name)){
            int i = name.indexOf(".");
            String newName=name.substring(0,i);
            return newName;
-       }
-       return "";
+
    }
 
 //    public static List<MusicBean> getMusicList(Cursor cursor) {
@@ -116,4 +114,6 @@ public class Util {
         int imgH = picH * imgW / picW;
         return new Point(imgW,imgH);
     }
+
+
 }

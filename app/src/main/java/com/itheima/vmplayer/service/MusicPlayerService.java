@@ -12,11 +12,8 @@ import android.support.annotation.Nullable;
 import com.itheima.vmplayer.bean.MusicBean;
 
 import java.io.IOException;
-import java.io.PushbackInputStream;
 import java.util.List;
 import java.util.Random;
-
-import butterknife.Bind;
 
 /**
  * Created by wschun on 2016/10/1.

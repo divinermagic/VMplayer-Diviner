@@ -19,12 +19,9 @@ import com.itheima.vmplayer.http.OkHttpManager;
 import com.itheima.vmplayer.http.StringCallBack;
 import com.itheima.vmplayer.util.URLProviderUtil;
 
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
 import butterknife.OnClick;
-import fm.jiecao.jcvideoplayer_lib.JCBuriedPointStandard;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import okhttp3.Call;

@@ -1,7 +1,5 @@
 package com.itheima.vmplayer.http;
 
-import java.util.concurrent.TimeUnit;
-
 import okhttp3.OkHttpClient;
 
 /**

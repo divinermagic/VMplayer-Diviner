@@ -18,7 +18,6 @@ import com.itheima.vmplayer.activity.MVDetailActivity;
 import com.itheima.vmplayer.activity.WebActivity;
 import com.itheima.vmplayer.activity.YueDanDetailActivity;
 import com.itheima.vmplayer.bean.VideoBean;
-import com.itheima.vmplayer.fragment.homepage.HomePresenter;
 
 import java.util.List;
 

@@ -113,6 +113,7 @@ public class MvChildFragment extends BaseFragment implements MvChildMvp.View {
         Toast.makeText(getContext(), "MvChildFragment错误码为:"+code, Toast.LENGTH_SHORT).show();
     }
 
+
     //上来加载的监听
     private class OnMvScrollListener extends RecyclerView.OnScrollListener {
         @Override

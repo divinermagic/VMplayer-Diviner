@@ -10,7 +10,6 @@ import com.itheima.vmplayer.http.StringCallBack;
 import com.itheima.vmplayer.util.LogUtils;
 import com.itheima.vmplayer.util.URLProviderUtil;
 
-
 import okhttp3.Call;
 
 /**

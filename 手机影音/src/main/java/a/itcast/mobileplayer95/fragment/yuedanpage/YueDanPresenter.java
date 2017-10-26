@@ -24,6 +24,8 @@ public class YueDanPresenter implements YueDanMvp.Presenter {
     @Override
     public void loadData(int offset, int size) {
 
+        view.showLoading();
+
         String url = URLProviderUtil.getMainPageYueDanUrl(offset,size);
 
         LogUtils.e(TAG,"YueDanPresenter.loadData,url:"+url);
@@ -32,11 +34,13 @@ public class YueDanPresenter implements YueDanMvp.Presenter {
             @Override
             public void onFailure(int code, Exception e) {
                 view.setError(code,e);
+                view.dismisLoading();
             }
 
             @Override
             public void onSuccess(YueDanBean yueDanBean) {
                 view.setData(yueDanBean.getPlayLists());
+                view.dismisLoading();
             }
 
 

@@ -1,11 +1,9 @@
 package com.itheima.vmplayer.activity;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-
 
 import com.itheima.vmplayer.R;
 

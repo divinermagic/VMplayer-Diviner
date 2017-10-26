@@ -89,6 +89,16 @@ public class YueDanFragment extends BaseFragment implements YueDanMvp.View {
         Toast.makeText(getActivity(), "请求数据发生错误,代码为:"+code, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void showLoading() {
+        showLoadingDialog();
+    }
+
+    @Override
+    public void dismisLoading() {
+        dismissLoadingDialog();
+    }
+
     private  class OnYueDanScrollListener extends RecyclerView.OnScrollListener {
         @Override
         /**

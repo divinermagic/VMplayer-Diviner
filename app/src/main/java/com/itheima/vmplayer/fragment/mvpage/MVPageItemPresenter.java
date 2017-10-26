@@ -3,19 +3,11 @@ package com.itheima.vmplayer.fragment.mvpage;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
-import com.itheima.vmplayer.bean.AreaBean;
 import com.itheima.vmplayer.bean.MvListBean;
 import com.itheima.vmplayer.http.OkHttpManager;
 import com.itheima.vmplayer.http.StringCallBack;
 import com.itheima.vmplayer.util.URLProviderUtil;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 import okhttp3.Call;
 

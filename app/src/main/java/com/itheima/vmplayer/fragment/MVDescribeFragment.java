@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide;
 import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.bean.MVDetailBean;
 
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
