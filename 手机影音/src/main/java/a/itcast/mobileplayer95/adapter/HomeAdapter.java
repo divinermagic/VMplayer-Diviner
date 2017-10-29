@@ -18,7 +18,7 @@ import a.itcast.mobileplayer95.Activity.WebViewActivity;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.Util;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -32,17 +32,17 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.iv_item_logo)
+        @BindView(R.id.iv_item_logo)
         ImageView ivItemLogo;
-        @Bind(R.id.iv_contentimg)
+        @BindView(R.id.iv_contentimg)
         ImageView ivContentimg;
-        @Bind(R.id.viewbg)
+        @BindView(R.id.viewbg)
         View viewbg;
-        @Bind(R.id.iv_type)
+        @BindView(R.id.iv_type)
         ImageView ivType;
-        @Bind(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tvTitle;
-        @Bind(R.id.tv_description)
+        @BindView(R.id.tv_description)
         TextView tvDescription;
 
         // TODO: 2017/9/23 当前条目的类型

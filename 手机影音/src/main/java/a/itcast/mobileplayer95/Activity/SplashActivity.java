@@ -8,14 +8,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import a.itcast.mobileplayer95.R;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 // TODO: 2017/9/4 引导界面
 public class SplashActivity extends AppCompatActivity {
-
-    @Bind(R.id.splash_iv_bg)
+    @BindView(R.id.splash_iv_bg)
     ImageView splashIvBg;
+
+//    @Bind(R.id.splash_iv_bg)
+//    ImageView splashIvBg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             // TODO: 2017/9/4 动画开始 
             public void onAnimationStart(Animation animation) {
-                
+
             }
 
             @Override
@@ -50,13 +52,13 @@ public class SplashActivity extends AppCompatActivity {
 
     private void startMainActivity() {
         //打开第二个界面 MainActivity
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
         //关闭当前动画
         finish();
         // TODO: 2017/9/4  跳转到主界面，并处理透明渐变转场动画 动态设置界面转场效果
-        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 }

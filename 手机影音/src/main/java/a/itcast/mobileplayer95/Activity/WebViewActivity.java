@@ -13,23 +13,29 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 import a.itcast.mobileplayer95.R;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WebViewActivity extends AppCompatActivity {
 
     private static final String TAG = "WebViewActivity";
-
-    @Bind(R.id.webview)
-    WebView webview;
-    @Bind(R.id.progress_bar)
-    ProgressBar progressBar;
-    @Bind(R.id.tool_bar)
+    @BindView(R.id.tool_bar)
     Toolbar toolBar;
+    @BindView(R.id.progress_bar)
+    ProgressBar progressBar;
+    @BindView(R.id.webview)
+    WebView webview;
+
+//    @Bind(R.id.webview)
+//    WebView webview;
+//    @Bind(R.id.progress_bar)
+//    ProgressBar progressBar;
+//    @Bind(R.id.tool_bar)
+//    Toolbar toolBar;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             // android.R.id.home == getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             case android.R.id.home:
                 finish();

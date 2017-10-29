@@ -14,7 +14,7 @@ import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.MvChildAdapter;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.LogUtils;
-import butterknife.Bind;
+import butterknife.BindView;
 
 
 /**
@@ -28,9 +28,9 @@ public class MvChildFragment extends BaseFragment implements MvChildMvp.View {
     private boolean isRefresh;
 
     //[1]
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    @Bind(R.id.refresh)
+    @BindView(R.id.refresh)
     SwipeRefreshLayout refresh;
 
     //[2] 定义 子界面的 code 代码 [JSON里的code]

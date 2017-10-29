@@ -12,7 +12,7 @@ import a.itcast.mobileplayer95.BaseFragment;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.MvPageAdapter;
 import a.itcast.mobileplayer95.bean.AreaBean;
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * 作者：Magic on 2017/9/22 18:08
@@ -23,9 +23,9 @@ public class MvFragment extends BaseFragment implements MvMvp.View {
 
     private static final String TAG = "MvFragment";
 
-    @Bind(R.id.viewpager)
+    @BindView(R.id.viewpager)
     ViewPager viewpager;
-    @Bind(R.id.tablayout)
+    @BindView(R.id.tablayout)
     TabLayout tablayout;
 
 

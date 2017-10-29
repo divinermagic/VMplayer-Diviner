@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/music_bg"
     tools:context="a.itcast.mobileplayer95.Activity.AudioPlayerActivity">
 
     <include

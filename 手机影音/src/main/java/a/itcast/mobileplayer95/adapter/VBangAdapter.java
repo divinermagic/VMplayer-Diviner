@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.utils.Util;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -68,11 +68,11 @@ public class VBangAdapter extends CursorAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tvTitle;
-        @Bind(R.id.tv_artist)
+        @BindView(R.id.tv_artist)
         TextView tvArtist;
-        @Bind(R.id.tv_size)
+        @BindView(R.id.tv_size)
         TextView tvSize;
 
         ViewHolder(View view) {

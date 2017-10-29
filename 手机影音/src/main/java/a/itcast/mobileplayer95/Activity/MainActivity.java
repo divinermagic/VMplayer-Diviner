@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -23,15 +24,17 @@ import a.itcast.mobileplayer95.fragment.Homepage.HomeFragment;
 import a.itcast.mobileplayer95.fragment.Mvpage.MvFragment;
 import a.itcast.mobileplayer95.fragment.vbangpage.VbangFragment;
 import a.itcast.mobileplayer95.fragment.yuedanpage.YueDanFragment;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    @Bind(R.id.toobar)
+    @BindView(R.id.toobar)
     Toolbar toobar;
+    @BindView(R.id.container)
+    FrameLayout container;
     // SparseArray<> 稀疏数组 是Android内部特有的api,标准的jdk是没有这个类的.在Android内部用来替代HashMap<Integer,E>这种形式,
     // 使用SparseArray更加节省内存空间的使用,SparseArray也是以key和value对数据进行保存的.使用的时候只需要指定value的类型即可.
     // 并且key不需要封装成对象类型.

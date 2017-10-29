@@ -12,7 +12,7 @@ import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.HomeAdapter;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.LogUtils;
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * 作者：Magic on 2017/9/6 09:24
@@ -24,11 +24,11 @@ public class HomeFragment extends BaseFragment implements HomeMvp.View {
     private static final String TAG = "HomeFragment";
 
 
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     // TODO: 2017/9/21 SwipeRefreshLayout 下拉刷新控件
-    @Bind(R.id.refresh)
+    @BindView(R.id.refresh)
     SwipeRefreshLayout refreshLayout;
 
     private HomeMvp.Presenter presenter;

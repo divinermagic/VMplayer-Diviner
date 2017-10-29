@@ -16,7 +16,7 @@ import a.itcast.mobileplayer95.Activity.PlayerActivity;
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.Util;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -34,15 +34,15 @@ public class MvChildAdapter extends RecyclerView.Adapter<MvChildAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.iv_postimg)
+        @BindView(R.id.iv_postimg)
         ImageView ivPostimg;
-        @Bind(R.id.viewbgs)
+        @BindView(R.id.viewbgs)
         View viewbgs;
-        @Bind(R.id.name)
+        @BindView(R.id.name)
         TextView name;
-        @Bind(R.id.author)
+        @BindView(R.id.author)
         TextView author;
-        @Bind(R.id.play_count)
+        @BindView(R.id.play_count)
         TextView playCount;
 
         public MyViewHolder(View itemView) {

@@ -21,7 +21,7 @@ import a.itcast.mobileplayer95.http.BaseCallBack;
 import a.itcast.mobileplayer95.http.HttpManager;
 import a.itcast.mobileplayer95.utils.LogUtils;
 import a.itcast.mobileplayer95.utils.URLProviderUtil;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
@@ -30,21 +30,31 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 public class PlayerActivity extends AppCompatActivity {
 
     private static final String TAG = "PlayerActivity";
-
-    @Bind(R.id.jiecaoplayer)
+    @BindView(R.id.jiecaoplayer)
     JCVideoPlayerStandard jiecaoplayer;
-    @Bind(R.id.mv_describe)
+    @BindView(R.id.mv_describe)
     ImageView mvDescribe;
-    @Bind(R.id.mv_comment)
+    @BindView(R.id.mv_comment)
     ImageView mvComment;
-    @Bind(R.id.mv_relative)
+    @BindView(R.id.mv_relative)
     ImageView mvRelative;
-    @Bind(R.id.fl_content)
+    @BindView(R.id.fl_content)
     FrameLayout flContent;
+
+    //    @Bind(R.id.jiecaoplayer)
+//    JCVideoPlayerStandard jiecaoplayer;
+//    @Bind(R.id.mv_describe)
+//    ImageView mvDescribe;
+//    @Bind(R.id.mv_comment)
+//    ImageView mvComment;
+//    @Bind(R.id.mv_relative)
+//    ImageView mvRelative;
+//    @Bind(R.id.fl_content)
+//    FrameLayout flContent;
     private SparseArray<Fragment> sparseArray;
 
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
         ButterKnife.bind(this);
@@ -68,9 +78,9 @@ public class PlayerActivity extends AppCompatActivity {
 
         // TODO: 2017/10/17  初始化 Fragment 缓存 只在初始化时创建了一次 并放到了缓存里面了
         sparseArray = new SparseArray<>();
-        sparseArray.append(R.id.mv_describe,new DescriptionFragment());
-        sparseArray.append(R.id.mv_comment,new CommentFragment());
-        sparseArray.append(R.id.mv_relative,new RelativeFragment());
+        sparseArray.append(R.id.mv_describe, new DescriptionFragment());
+        sparseArray.append(R.id.mv_comment, new CommentFragment());
+        sparseArray.append(R.id.mv_relative, new RelativeFragment());
 
         // TODO: 2017/9/27 初始化界面时 默认选中MV描述界面
         mvDescribe.performClick();
@@ -80,13 +90,13 @@ public class PlayerActivity extends AppCompatActivity {
     private void requestVideoData(int id) {
         String url = URLProviderUtil.getPeopleYueDanList(id);
 
-        LogUtils.e(TAG,"PlayerActivity.requestVideoData,url:"+url);
+        LogUtils.e(TAG, "PlayerActivity.requestVideoData,url:" + url);
 
         HttpManager.getInstance().get(url, new BaseCallBack<YueDanDetailBean>() {
 
             @Override
             public void onFailure(int code, Exception e) {
-                Toast.makeText(PlayerActivity.this, "出现错误,错误代码为："+code, Toast.LENGTH_SHORT).show();
+                Toast.makeText(PlayerActivity.this, "出现错误,错误代码为：" + code, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -94,7 +104,7 @@ public class PlayerActivity extends AppCompatActivity {
                 List<YueDanDetailBean.VideosBean> videos = yueDanDetailBean.getVideos();
                 YueDanDetailBean.VideosBean videosBean = videos.get(0);//0代表第一首
                 //初始化播放器
-                jiecaoplayer.setUp(videosBean.getHdUrl(),videosBean.getTitle());
+                jiecaoplayer.setUp(videosBean.getHdUrl(), videosBean.getTitle());
                 //模拟点击按钮
                 jiecaoplayer.startButton.performClick();
             }
@@ -120,7 +130,7 @@ public class PlayerActivity extends AppCompatActivity {
     // TODO: 2017/9/27 将参数里的 Fragment 显示出来
     private void showFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fl_content,fragment);
+        transaction.replace(R.id.fl_content, fragment);
         transaction.commit();
     }
 
@@ -128,23 +138,23 @@ public class PlayerActivity extends AppCompatActivity {
     // TODO: 2017/9/27 根据选中的ID来更新图片
     private void updataButtonPic(int viewId) {
         //更新简介
-        if (viewId == R.id.mv_describe){
+        if (viewId == R.id.mv_describe) {
             mvDescribe.setBackgroundResource(R.drawable.player_mv_p);
-        }else {
+        } else {
             mvDescribe.setBackgroundResource(R.drawable.player_mv);
         }
 
         //更新评论
-        if (viewId == R.id.mv_comment){
+        if (viewId == R.id.mv_comment) {
             mvComment.setBackgroundResource(R.drawable.player_comment_p);
-        }else {
+        } else {
             mvComment.setBackgroundResource(R.drawable.player_comment);
         }
 
         //更新相关
-        if (viewId == R.id.mv_relative){
+        if (viewId == R.id.mv_relative) {
             mvRelative.setBackgroundResource(R.drawable.player_relative_mv_p);
-        }else {
+        } else {
             mvRelative.setBackgroundResource(R.drawable.player_relative_mv);
         }
 

@@ -17,13 +17,13 @@ import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.VBangAdapter;
 import a.itcast.mobileplayer95.bean.MusicBean;
 import a.itcast.mobileplayer95.db.MyAsyncQueryHandler;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class VbangFragment extends BaseFragment {
 
     private static final String TAG = "VbangFragment";
 
-    @Bind(R.id.listView)
+    @BindView(R.id.listView)
     ListView listView;
 
     private VBangAdapter vBangAdapter;
@@ -48,6 +48,8 @@ public class VbangFragment extends BaseFragment {
         //「INTERNAL_CONTENT_URI」 内部内容URI  「EXTERNAL_CONTENT_URI」外部内容URI
         // Cursor cursor = resolver.query(Media.EXTERNAL_CONTENT_URI, new String[]{Media.DATA, Media.SIZE, Media.DISPLAY_NAME, Media.ARTIST}, null, null, null);
         Uri uri = Media.EXTERNAL_CONTENT_URI;
+
+        //Uri uri1 = Media.INTERNAL_CONTENT_URI;
 
         String[] projection = {Media._ID/*"uid as _id"*/,Media.DATA, Media.SIZE, Media.DISPLAY_NAME, Media.ARTIST};
 

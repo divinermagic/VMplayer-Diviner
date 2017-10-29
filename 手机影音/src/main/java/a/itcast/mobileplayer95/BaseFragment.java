@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 作者：Magic on 2017/9/7 02:34
@@ -29,6 +30,8 @@ public abstract class BaseFragment extends Fragment {
 
     private MaterialDialog dialog;
 
+    private Unbinder unbinder;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +41,9 @@ public abstract class BaseFragment extends Fragment {
         if (rootView == null){
             rootView = inflater.inflate(getLayoutId(),null);
         }
+        //unbinder = ButterKnife.bind(this,rootView);
         ButterKnife.bind(this,rootView);
+        unbinder = ButterKnife.bind(this,rootView);
         initView();
         return rootView;
     }
@@ -49,10 +54,14 @@ public abstract class BaseFragment extends Fragment {
     // TODO: 2017/9/7 protected abstract void initView(); 处理界面初始化.
     protected abstract void initView();
 
+
     @Override
     public void onDestroyView() {
+
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        //ButterKnife.unbind(this,rootView);
+        unbinder.unbind();
+
     }
 
     protected void showLoadingDialog(){

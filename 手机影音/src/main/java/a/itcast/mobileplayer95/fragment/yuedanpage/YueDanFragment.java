@@ -13,7 +13,7 @@ import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.YueDanAdapter;
 import a.itcast.mobileplayer95.bean.YueDanBean;
 import a.itcast.mobileplayer95.utils.LogUtils;
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * 作者：Magic on 2017/9/21 14:52
@@ -24,9 +24,9 @@ public class YueDanFragment extends BaseFragment implements YueDanMvp.View {
 
     private static final String TAG = "YueDanFragment";
 
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    @Bind(R.id.refresh)
+    @BindView(R.id.refresh)
     SwipeRefreshLayout refresh;
 
     private static YueDanMvp.Presenter presenter;
