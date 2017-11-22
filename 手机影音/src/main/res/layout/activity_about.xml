@@ -20,9 +20,15 @@
         <!--app:layout_scrollFlags="scroll|exitUntilCollapsed" 我是否要这个滚动事件 并且 退出直到折叠 -->
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             app:layout_scrollFlags="exitUntilCollapsed|scroll"
             android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+
+            </android.support.v7.widget.Toolbar>
 
             <ImageView
                 android:scaleType="centerCrop"
