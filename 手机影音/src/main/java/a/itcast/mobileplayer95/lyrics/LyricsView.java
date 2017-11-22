@@ -16,6 +16,7 @@ import a.itcast.mobileplayer95.R;
 
 /**
  * Created by divinermagic on 2017/11/21.
+ * @author Diviner
  */
 @SuppressLint("AppCompatCustomView")
 public class LyricsView extends TextView {
@@ -167,6 +168,16 @@ public class LyricsView extends TextView {
                 //居中行 需要 高亮
                 paint.setColor(mHighlightColor);
                 paint.setTextSize(mHighlightSize);
+            }else if (i == centerIndex -1||i==centerIndex+1){
+                // TODO: 2017/11/22 给歌词 设置渐变颜色
+                paint.setColor(getResources().getColor(R.color.hightLightColor1));
+
+                paint.setTextSize(mNormalSize);
+                // TODO: 2017/11/22 给歌词 设置渐变颜色
+            }else if (i == centerIndex - 2 ||i == centerIndex +2){
+                paint.setColor(getResources().getColor(R.color.hightLightColor2));
+
+                paint.setTextSize(mNormalSize);
             }else {
                 //普通行 需要 变暗
                 paint.setColor(mNormalColor);

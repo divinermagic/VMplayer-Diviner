@@ -1,17 +1,19 @@
 package a.itcast.mobileplayer95.lyrics;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by divinermagic on 2017/11/21.
  * 作用 给一个歌词文件 解析出 歌词列表
  */
 
-public class LyricsParser {
+public class LyricsParser{
 
     /**
      * 从歌词文件里 解析处完整的歌词列表
@@ -47,6 +49,10 @@ public class LyricsParser {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //将歌词排序
+        Collections.sort(arrayList);
+
 
         return arrayList;
 
@@ -110,5 +116,6 @@ public class LyricsParser {
 
         return startPoint;
     }
+
 
 }

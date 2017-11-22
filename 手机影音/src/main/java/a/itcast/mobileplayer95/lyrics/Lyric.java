@@ -1,10 +1,12 @@
 package a.itcast.mobileplayer95.lyrics;
 
+import android.support.annotation.NonNull;
+
 /**
  * Created by divinermagic on 2017/11/21.
  */
 
-public class Lyric {
+public class Lyric implements Comparable<Lyric>{
 
     int startPoint;
 
@@ -37,5 +39,11 @@ public class Lyric {
                 "startPoint=" + startPoint +
                 ", content='" + content + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(@NonNull Lyric lyric) {
+
+        return startPoint - lyric.getStartPoint();
     }
 }
