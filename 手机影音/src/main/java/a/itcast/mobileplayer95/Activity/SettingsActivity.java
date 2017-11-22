@@ -1,5 +1,6 @@
 package a.itcast.mobileplayer95.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
@@ -113,6 +114,8 @@ public class SettingsActivity extends AppCompatActivity {
                }.start();
                 break;
             case R.id.rl_about:
+                Intent intent = new Intent(this,AboutActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
