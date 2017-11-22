@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="a.itcast.mobileplayer95.Activity.AboutActivity">
+
+    <!--android.support.design.widget.CoordinatorLayout 协调者布局-->
+
+    <!--android.support.design.widget.AppBarLayout 必须要用这个才能写 协调者布局 -->
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <!--android.support.design.widget.CollapsingToolbarLayout 可折叠的ToolBar -->
+
+        <!--app:layout_scrollFlags="scroll|exitUntilCollapsed" 我是否要这个滚动事件 并且 退出直到折叠 -->
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="wrap_content"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:src="@drawable/about_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!--android.support.v4.widget.NestedScrollView 嵌套滚动视图-->
+    <!--要使用这个协调者布局的话 必须用下面这个 V4 包的控件-->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+
+        <!--这句话的意思是 NestedScrollView要滚动的时候把自己的滚动事件交给AppBarLayout-->
+
+        <TextView
+            android:text="@string/large_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -26,8 +26,11 @@
         <activity android:name=".Activity.OkHttpTestActivity" />
         <activity android:name=".Activity.WebViewActivity" />
         <activity android:name=".Activity.PlayerActivity" />
-        <activity android:name=".Activity.AudioPlayerActivity"></activity>
-        <service android:name=".service.AudioService"/>
+        <activity android:name=".Activity.AudioPlayerActivity" />
+
+        <service android:name=".service.AudioService" />
+
+        <activity android:name=".Activity.AboutActivity"></activity>
     </application>
 
 </manifest>
