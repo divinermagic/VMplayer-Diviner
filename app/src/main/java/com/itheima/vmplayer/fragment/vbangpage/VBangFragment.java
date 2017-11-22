@@ -20,15 +20,19 @@ import com.itheima.vmplayer.util.Util;
 
 import java.io.Serializable;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by wschun on 2016/9/28.
  */
 
 public class VBangFragment extends BaseFragment implements VbangContract.View {
-    @Bind(R.id.lv_music)
+
+    private Unbinder unbinder;
+
+    @BindView(R.id.lv_music)
     ListView lvMusic;
     private MyCursorAdapter myCursorAdapter;
 
@@ -42,6 +46,7 @@ public class VBangFragment extends BaseFragment implements VbangContract.View {
             new VbangPresenter(this);
             presenter.query(getActivity(),myCursorAdapter);
 //            initData();
+            unbinder = ButterKnife.bind(this,rootView);
         }
 
         return rootView;
@@ -92,7 +97,7 @@ public class VBangFragment extends BaseFragment implements VbangContract.View {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     @Override

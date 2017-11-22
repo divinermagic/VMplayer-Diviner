@@ -19,18 +19,21 @@ import com.itheima.vmplayer.fragment.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by wschun on 2016/8/31.
  */
 public class YueDanFragment extends BaseFragment implements YueDanFragmentContract.View {
 
+    private Unbinder unbinder;
 
-    @Bind(R.id.rv_recycleview)
+
+    @BindView(R.id.rv_recycleview)
     RecyclerView rvRecycleview;
-    @Bind(R.id.srl_refresh)
+    @BindView(R.id.srl_refresh)
     SwipeRefreshLayout srlRefresh;
     private YueDanFragmentContract.Presenter presenter;
     private List<YueDanBean.PlayListsBean> playListsBeanArrayList;
@@ -53,7 +56,7 @@ public class YueDanFragment extends BaseFragment implements YueDanFragmentContra
             presenter.getData(offset, SIZE);
         }
 
-
+        unbinder = ButterKnife.bind(this,rootView);
         return rootView;
     }
 
@@ -137,7 +140,7 @@ public class YueDanFragment extends BaseFragment implements YueDanFragmentContra
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
 }

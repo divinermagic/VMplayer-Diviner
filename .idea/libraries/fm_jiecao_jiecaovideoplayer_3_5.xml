@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="fm.jiecao:jiecaovideoplayer-3.5">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/bc01881d16cb5ab617805a718e82d3513963118d/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/bc01881d16cb5ab617805a718e82d3513963118d/output/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-3.5.aar/5f8d34f289045146650b48ac6bf4e9da/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jiecaovideoplayer-3.5.aar/5f8d34f289045146650b48ac6bf4e9da/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

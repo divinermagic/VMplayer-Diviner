@@ -17,17 +17,21 @@ import com.itheima.vmplayer.fragment.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by wschun on 2016/9/28.
  */
 
 public class HomeFragment extends BaseFragment implements HomeContract.View {
-    @Bind(R.id.rv_home)
+
+    private Unbinder unbinder;
+
+    @BindView(R.id.rv_home)
     RecyclerView rvHome;
-    @Bind(R.id.srf_fresh)
+    @BindView(R.id.srf_fresh)
     SwipeRefreshLayout srfFresh;
     private List<VideoBean> videoBeanlist;
     private HomePageAdapter homePageAdapter;
@@ -44,6 +48,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
             new HomePresenter(this);
             presenter.getData(offset, SIZE);
         }
+        unbinder = ButterKnife.bind(this,rootView);
         return rootView;
     }
 
@@ -82,7 +87,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     @Override

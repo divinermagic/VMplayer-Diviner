@@ -14,7 +14,7 @@ import com.itheima.vmplayer.http.OkHttpManager;
 import com.itheima.vmplayer.http.StringCallBack;
 import com.itheima.vmplayer.util.URLProviderUtil;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
@@ -28,15 +28,15 @@ import okhttp3.Call;
  */
 public class YueDanDetailActivity extends AppCompatActivity {
 
-    @Bind(R.id.videoPlayer)
+    @BindView(R.id.videoPlayer)
     JCVideoPlayerStandard videoPlayer;
-    @Bind(R.id.iv_yuedan_describe)
+    @BindView(R.id.iv_yuedan_describe)
     ImageView ivYuedanDescribe;
-    @Bind(R.id.iv_yuedan_comment)
+    @BindView(R.id.iv_yuedan_comment)
     ImageView ivYuedanComment;
-    @Bind(R.id.iv_yuedan_list)
+    @BindView(R.id.iv_yuedan_list)
     ImageView ivYuedanList;
-    @Bind(R.id.fl_content)
+    @BindView(R.id.fl_content)
     FrameLayout flContent;
     private int id;
     private YueDanDetailBean yueDanDetailBean;

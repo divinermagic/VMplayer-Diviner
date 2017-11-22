@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Point;
+import android.text.format.DateFormat;
 import android.util.Log;
+
+import java.util.Calendar;
 
 //import com.itheima.vmplayer.bean.MusicBean;
 
@@ -71,7 +74,7 @@ public class Util {
      * @return
      */
     public static int getScreenHeight(Context context) {
-        int height = ((Activity) context).getWindowManager().getDefaultDisplay().getHeight();
+        int height = ((Activity) context).getWindowManager().getDefaultDisplay().  getHeight();
         return height;
     }
 
@@ -115,5 +118,31 @@ public class Util {
         return new Point(imgW,imgH);
     }
 
+    /**
+     * 格式化 时间 00：01 或者 01：02：03
+     * @param time
+     * @return
+     */
+    public static String formatTime(int time){
+
+        //怎么算歌曲有没有大于一个小时的  time/60/60/1000
+
+        //使用Calender获取时间对象
+        Calendar calendar = Calendar.getInstance();
+        //每次使用之前 把旧的数据清空掉 再把新的数据放进去 进行运算
+        calendar.clear();
+        //.add(),和 .set()都是获取时间的 「.set()会把时间放进时间戳 会根据时区来转换」
+        calendar.add(Calendar.MILLISECOND,time);
+        int hour = calendar.get(Calendar.HOUR);
+        LogUtils.e(TAG,"Util.formatTime,hour:"+hour);
+
+        // DateFormat 是Android包里面的
+        if (hour > 1){
+            return (String) DateFormat.format("hh:mm:ss",calendar);
+        }else{
+            return (String) DateFormat.format("mm:ss",calendar);
+        }
+
+    }
 
 }

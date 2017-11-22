@@ -17,29 +17,29 @@ import com.itheima.vmplayer.R;
 import java.io.File;
 import java.text.DecimalFormat;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SettingActivity extends AppCompatActivity {
 
-    @Bind(R.id.toolBar)
+    @BindView(R.id.toolBar)
     Toolbar toolBar;
-    @Bind(R.id.cacheSize)
+    @BindView(R.id.cacheSize)
     TextView cacheSize;
-    @Bind(R.id.rl_clear_chche)
+    @BindView(R.id.rl_clear_chche)
     RelativeLayout rlClearChche;
-    @Bind(R.id.switch_push)
+    @BindView(R.id.switch_push)
     SwitchCompat switchPush;
-    @Bind(R.id.rl_switch_push)
+    @BindView(R.id.rl_switch_push)
     RelativeLayout rlSwitchPush;
-    @Bind(R.id.switch_loadimg_no_wifi)
+    @BindView(R.id.switch_loadimg_no_wifi)
     SwitchCompat switchLoadimgNoWifi;
-    @Bind(R.id.rl_loadimg_withwifi)
+    @BindView(R.id.rl_loadimg_withwifi)
     RelativeLayout rlLoadimgWithwifi;
-    @Bind(R.id.rl_about)
+    @BindView(R.id.rl_about)
     RelativeLayout rlAbout;
-    @Bind(R.id.activity_setting)
+    @BindView(R.id.activity_setting)
     LinearLayout activitySetting;
 
 

@@ -22,7 +22,7 @@ import com.itheima.vmplayer.fragment.yuedanpage.YueDanFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -30,11 +30,11 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.iv_setting)
+    @BindView(R.id.iv_setting)
     ImageView ivSetting;
-    @Bind(R.id.toolBar)
+    @BindView(R.id.toolBar)
     Toolbar toolBar;
-    @Bind(R.id.activity_main)
+    @BindView(R.id.activity_main)
     RelativeLayout activityMain;
     private SparseArray<Fragment> sparseArray;
 

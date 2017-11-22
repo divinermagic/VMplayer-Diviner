@@ -12,8 +12,9 @@ import com.bumptech.glide.Glide;
 import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.bean.MVDetailBean;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -23,20 +24,22 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class MVDescribeFragment extends Fragment {
 
+    private Unbinder unbinder;
 
-    @Bind(R.id.profile_image)
+
+    @BindView(R.id.profile_image)
     CircleImageView profileImage;
-    @Bind(R.id.tv_yiren)
+    @BindView(R.id.tv_yiren)
     TextView tvYiren;
-    @Bind(R.id.tv_artist_name)
+    @BindView(R.id.tv_artist_name)
     TextView tvArtistName;
-    @Bind(R.id.tv_play_count)
+    @BindView(R.id.tv_play_count)
     TextView tvPlayCount;
-    @Bind(R.id.tv_pc_count)
+    @BindView(R.id.tv_pc_count)
     TextView tvPcCount;
-    @Bind(R.id.tv_moble_count)
+    @BindView(R.id.tv_moble_count)
     TextView tvMobleCount;
-    @Bind(R.id.tv_describe)
+    @BindView(R.id.tv_describe)
     TextView tvDescribe;
     private MVDetailBean mvDetailBean;
     private View rootView;
@@ -63,6 +66,8 @@ public class MVDescribeFragment extends Fragment {
             rootView = inflater.inflate(R.layout.fragment_describe, container, false);
         ButterKnife.bind(this, rootView);
         initData();
+        //返回一个Unbinder值（进行解绑），注意这里的this不能使用getActivity()
+        unbinder = ButterKnife.bind(this, rootView);
         return rootView;
     }
 
@@ -79,6 +84,6 @@ public class MVDescribeFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 }

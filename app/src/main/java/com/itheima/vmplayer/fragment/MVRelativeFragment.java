@@ -14,8 +14,9 @@ import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.adapter.RelativeMvRecycleAdapter;
 import com.itheima.vmplayer.bean.MVDetailBean;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by Mr.Wang
@@ -24,8 +25,9 @@ import butterknife.ButterKnife;
  */
 public class MVRelativeFragment extends Fragment {
 
+    private Unbinder unbinder;
 
-    @Bind(R.id.rv_recycleview)
+    @BindView(R.id.rv_recycleview)
     RecyclerView rvRecycleview;
     private MVDetailBean mvDetailBean;
     private View rootView;
@@ -52,6 +54,7 @@ public class MVRelativeFragment extends Fragment {
             rootView = inflater.inflate(R.layout.fragment_relative, container, false);
         ButterKnife.bind(this, rootView);
         initData();
+        unbinder = ButterKnife.bind(this, rootView);
         return rootView;
     }
 
@@ -65,6 +68,6 @@ public class MVRelativeFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 }

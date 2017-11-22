@@ -13,7 +13,7 @@ import com.itheima.vmplayer.R;
 import com.itheima.vmplayer.bean.MusicBean;
 import com.itheima.vmplayer.util.Util;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -42,13 +42,13 @@ public class MyCursorAdapter extends CursorAdapter {
     }
 
     static class ViewHolder {
-        @Bind(R.id.iv_icon)
+        @BindView(R.id.iv_icon)
         ImageView ivIcon;
-        @Bind(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tvTitle;
-        @Bind(R.id.tv_duration)
+        @BindView(R.id.tv_duration)
         TextView tvDuration;
-        @Bind(R.id.tv_size)
+        @BindView(R.id.tv_size)
         TextView tvSize;
 
         ViewHolder(View view) {

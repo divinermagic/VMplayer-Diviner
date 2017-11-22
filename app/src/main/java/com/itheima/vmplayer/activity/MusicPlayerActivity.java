@@ -31,7 +31,7 @@ import java.io.File;
 import java.io.Serializable;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -39,31 +39,31 @@ public class MusicPlayerActivity extends AppCompatActivity {
 
 
     private static final String TAG ="MusicPlayerActivity" ;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView ivBack;
-    @Bind(R.id.tv_music_name)
+    @BindView(R.id.tv_music_name)
     TextView tvMusicName;
-    @Bind(R.id.tv_artist_name)
+    @BindView(R.id.tv_artist_name)
     TextView tvArtistName;
 
 
-    @Bind(R.id.activity_music_player)
+    @BindView(R.id.activity_music_player)
     LinearLayout activityMusicPlayer;
-    @Bind(R.id.iv_music_anim)
+    @BindView(R.id.iv_music_anim)
     ImageView ivMusicAnim;
-    @Bind(R.id.lyricsView)
+    @BindView(R.id.lyricsView)
     Lyrics lyricsView;
-    @Bind(R.id.tv_play_time)
+    @BindView(R.id.tv_play_time)
     TextView tvPlayTime;
-    @Bind(R.id.sb_music)
+    @BindView(R.id.sb_music)
     SeekBar sbMusic;
-    @Bind(R.id.btn_playmode)
+    @BindView(R.id.btn_playmode)
     ImageView btnPlaymode;
-    @Bind(R.id.btn_music_pre)
+    @BindView(R.id.btn_music_pre)
     ImageView btnMusicPre;
-    @Bind(R.id.btn_music_play)
+    @BindView(R.id.btn_music_play)
     ImageView btnMusicPlay;
-    @Bind(R.id.btn_music_next)
+    @BindView(R.id.btn_music_next)
     ImageView btnMusicNext;
     private MusicPlayerService.MusicProxy musicProxy;
     private MusicBroadCast musicBroadCast;

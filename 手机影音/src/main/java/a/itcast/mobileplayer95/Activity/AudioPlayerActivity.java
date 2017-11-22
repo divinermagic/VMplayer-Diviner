@@ -8,23 +8,55 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.io.File;
+
 import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.MusicBean;
+import a.itcast.mobileplayer95.lyrics.LyricsView;
 import a.itcast.mobileplayer95.service.AudioService;
+import a.itcast.mobileplayer95.utils.Util;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AudioPlayerActivity extends AppCompatActivity {
 
+    //更新播放进度
+    private static final int MSG_UPDATE_POSITION = 0;
+
+    private static final int MSG_ROLLING_LYRICS = 1;
+
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_UPDATE_POSITION:
+                    startUpdatePosition();
+                    break;
+                case MSG_ROLLING_LYRICS:
+                    startRollingLyrics();
+                    break;
+                default:
+
+                    break;
+            }
+        }
+    };
+
     private static final String TAG = "AudioPlayerActivity";
+
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_title)
@@ -47,6 +79,8 @@ public class AudioPlayerActivity extends AppCompatActivity {
     ImageView ivList;
     @BindView(R.id.iv_wave)
     ImageView ivWave;
+    @BindView(R.id.lyrics_view)
+    LyricsView lyricsView;
 
 
     // TODO: 2017/10/27 ServiceConnection 服务连接
@@ -70,7 +104,12 @@ public class AudioPlayerActivity extends AppCompatActivity {
         // TODO: 2017/10/27 registerReceiver:注册接收
         IntentFilter filter = new IntentFilter("com.ithiema.audio_prepared");
         audioreceiver = new AudioReceiver();
-        registerReceiver(audioreceiver, filter);//广播有初始化，就必须要有注销
+
+        //广播有初始化，就必须要有注销
+        registerReceiver(audioreceiver, filter);
+
+        //进度条监听
+        skPosition.setOnSeekBarChangeListener(new OnAudioSeekBarChangeListener());
     }
 
     private void initData() {
@@ -94,10 +133,13 @@ public class AudioPlayerActivity extends AppCompatActivity {
         unregisterReceiver(audioreceiver);
         //停止播放歌曲
         audioBinder.stoped();
+        //移除所有的 handle 消息
+        mHandler.removeCallbacksAndMessages(null);
     }
 
     //切换 「暂停/播放」 状态
     private void switchPauseStatus() {
+
         audioBinder.switchPauseStatus();
 
         // TODO: 2017/10/27 updataPauseBtn:更新暂停按钮的图片
@@ -131,17 +173,81 @@ public class AudioPlayerActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.iv_playmode:
+                switchPlayMode();
                 break;
             case R.id.iv_pre:
+                audioBinder.playPre();
                 break;
             case R.id.iv_pause:
                 switchPauseStatus();
                 break;
             case R.id.iv_next:
+                audioBinder.playNext();
                 break;
             case R.id.iv_list:
                 break;
+            default:
+                break;
         }
+    }
+
+    // TODO: 2017/11/21 切换播放模式 按照 顺序播放 -- 单曲循环 -- 随机播放 依次切换
+    private void switchPlayMode() {
+        audioBinder.switchPlayMode();
+
+        // TODO: 2017/11/21 更换 播放模式[播放顺序] 的图片
+        updatePlayModeBtn();
+    }
+
+    /**
+     * 更换 播放模式[播放顺序] 的图片
+     */
+    private void updatePlayModeBtn() {
+        switch (audioBinder.getPlayMode()) {
+            case AudioService.PLAYMODE_ALL:
+                ivPlaymode.setImageResource(R.drawable.selector_btn_playmode_order);
+                break;
+            case AudioService.PLAYMODE_SINGLE:
+                ivPlaymode.setImageResource(R.drawable.selector_btn_playmode_single);
+                break;
+            case AudioService.PLAYMODE_RANDOM:
+                ivPlaymode.setImageResource(R.drawable.selector_btn_playmode_random);
+                break;
+            default:
+                break;
+        }
+    }
+
+    // TODO: 2017/11/2  更新播放进度，并稍后再次更新
+    private void startUpdatePosition() {
+        int duration = audioBinder.getDuration();
+        String durationStr = Util.formatTime(duration);
+
+        int position = audioBinder.getPosition();
+        // LogUtils.e(TAG,"AudioPlayerActivity.startUpdatePosition,position="+position);
+        String positionStr = Util.formatTime(position);
+
+        tvPosition.setText(positionStr + " / " + durationStr);
+
+        //动作67:播放进度条的处理
+        skPosition.setMax(duration);
+        skPosition.setProgress(position);
+
+        // TODO: 2017/11/2  Handler 发送延迟消息，稍后再次更新界面
+        mHandler.sendEmptyMessageDelayed(MSG_UPDATE_POSITION, 500);
+    }
+
+
+    /**
+     * 开始更新歌词
+     * 刷新歌词的居中行,并稍后再次刷新
+     */
+    private void startRollingLyrics() {
+
+        lyricsView.computeCenterIndex(audioBinder.getPosition(),audioBinder.getDuration());
+
+        mHandler.sendEmptyMessage(MSG_ROLLING_LYRICS);
+
     }
 
     private class AudioServiceConnection implements ServiceConnection {
@@ -178,12 +284,63 @@ public class AudioPlayerActivity extends AppCompatActivity {
                 tvTitle.setText(musicBean.title);
                 tvArtist.setText(musicBean.artist);
 
+                // TODO: 2017/10/31 更新歌曲的播放进度
+
+
                 // 开启示波器动画 「写在这的话 停止音乐的时候，也在动 所以写在了 updataPauseBtn()里」
                 // TODO: 2017/10/27 获取到示波器 帧动画的对象
                 // AnimationDrawable anim = (AnimationDrawable) ivWave.getDrawable();
                 // anim.start();
 
+
+                // 更新播放进度
+                startUpdatePosition();
+
+                //更新播放顺序图片
+                updatePlayModeBtn();
+
+                //开始更新歌词
+                File file = new File(Environment.getExternalStorageDirectory(),"/audio/"+musicBean.title+".lrc") ;
+                lyricsView.setLyricFile(file);
+                startRollingLyrics();
+
+
             }
+        }
+    }
+
+
+    private class OnAudioSeekBarChangeListener implements SeekBar.OnSeekBarChangeListener {
+        @Override
+        /**
+         * 当进度发生变化的时候
+         */
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            //Log.e(TAG, "onProgressChanged:进度发生变化,progress="+progress+"fromUser="+fromUser);
+
+            //如果不是用户 发起的变更 则不处理
+            if (!fromUser) {
+                return;
+            }
+
+            audioBinder.seekTo(progress);
+
+        }
+
+        @Override
+        /**
+         * 当用户手指按下的时候
+         */
+        public void onStartTrackingTouch(SeekBar seekBar) {
+            Log.e(TAG, "onStartTrackingTouch:手指按下");
+        }
+
+        @Override
+        /**
+         * 当用户手指抬起的时候
+         */
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            Log.e(TAG, "onStopTrackingTouch:手指抬起");
         }
     }
 }

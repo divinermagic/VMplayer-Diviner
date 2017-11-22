@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 
 import com.itheima.vmplayer.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -25,11 +25,11 @@ import butterknife.ButterKnife;
 public class WebActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.pb_progress)
+    @BindView(R.id.pb_progress)
     ProgressBar pbProgress;
-    @Bind(R.id.webView)
+    @BindView(R.id.webView)
     WebView webView;
 
     @Override

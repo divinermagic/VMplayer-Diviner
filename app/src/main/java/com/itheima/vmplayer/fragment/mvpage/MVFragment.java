@@ -17,17 +17,20 @@ import com.itheima.vmplayer.fragment.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by wschun on 2016/9/28.
  */
 
 public class MVFragment extends BaseFragment implements MVPageContract.View {
-    @Bind(R.id.tabLayout)
+
+    private Unbinder unbinder;
+    @BindView(R.id.tabLayout)
     TabLayout tabLayout;
-    @Bind(R.id.viewPage)
+    @BindView(R.id.viewPage)
     ViewPager viewPage;
 
     @Nullable
@@ -39,13 +42,14 @@ public class MVFragment extends BaseFragment implements MVPageContract.View {
             new MVPagePresenter(this);
             presenter.getData(offset,SIZE);
         }
+        unbinder = ButterKnife.bind(this,rootView);
         return rootView;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
     private List<Fragment> fragmentList=new ArrayList<>();
     @Override

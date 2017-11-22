@@ -17,8 +17,9 @@ import com.itheima.vmplayer.fragment.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by wschun on 2016/10/1.
@@ -26,9 +27,11 @@ import butterknife.ButterKnife;
 
 public class MVPageItemFragment extends BaseFragment implements MVPageitemContract.View {
 
-    @Bind(R.id.rv_mvitem)
+    private Unbinder unbinder;
+
+    @BindView(R.id.rv_mvitem)
     RecyclerView rvMvitem;
-    @Bind(R.id.srl_fresh)
+    @BindView(R.id.srl_fresh)
     SwipeRefreshLayout srlFresh;
     private String code;
     private List<VideoBean> videoBeanList;
@@ -60,6 +63,7 @@ public class MVPageItemFragment extends BaseFragment implements MVPageitemContra
             initView();
             new MVPageItemPresenter(this);
             presenter.getData(offset, SIZE, code);
+            unbinder = ButterKnife.bind(this,rootView);
         }
         return rootView;
     }
@@ -97,7 +101,7 @@ public class MVPageItemFragment extends BaseFragment implements MVPageitemContra
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     @Override

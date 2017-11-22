@@ -7,12 +7,12 @@ import android.view.MenuItem;
 
 import com.itheima.vmplayer.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AboutActivity extends AppCompatActivity {
 
-    @Bind(R.id.toolBar)
+    @BindView(R.id.toolBar)
     Toolbar toolBar;
 
     @Override

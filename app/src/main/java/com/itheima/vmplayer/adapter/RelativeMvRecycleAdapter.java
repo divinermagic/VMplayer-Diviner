@@ -17,7 +17,7 @@ import com.itheima.vmplayer.bean.MVDetailBean;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -66,15 +66,15 @@ public class RelativeMvRecycleAdapter extends RecyclerView.Adapter<RelativeMvRec
     }
 
     class RelativeViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.iv_postimg)
+        @BindView(R.id.iv_postimg)
         ImageView ivPostimg;
-        @Bind(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tvTitle;
-        @Bind(R.id.tv_artist_name)
+        @BindView(R.id.tv_artist_name)
         TextView tvArtistName;
-        @Bind(R.id.tv_count)
+        @BindView(R.id.tv_count)
         TextView tvCount;
-        @Bind(R.id.rl_item_root)
+        @BindView(R.id.rl_item_root)
         LinearLayout rlItemRoot;
         public RelativeViewHolder(View itemView) {
             super(itemView);

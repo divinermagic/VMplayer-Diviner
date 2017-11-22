@@ -48,11 +48,8 @@
         android:src="@drawable/audio_wave_anim" />
 
     <!--歌词 「先把位置给占下来」 因为是自定义控件-->
-    <TextView
-        android:gravity="center"
-        android:text="歌词"
-        android:textSize="50sp"
-        android:textColor="#fff"
+    <a.itcast.mobileplayer95.lyrics.LyricsView
+        android:id="@+id/lyrics_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

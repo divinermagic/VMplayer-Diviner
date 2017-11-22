@@ -19,7 +19,7 @@ import com.itheima.vmplayer.http.OkHttpManager;
 import com.itheima.vmplayer.http.StringCallBack;
 import com.itheima.vmplayer.util.URLProviderUtil;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
@@ -33,15 +33,15 @@ import okhttp3.Call;
  */
 public class MVDetailActivity extends AppCompatActivity {
 
-    @Bind(R.id.videoPlayer)
+    @BindView(R.id.videoPlayer)
     JCVideoPlayerStandard videoPlayer;
-    @Bind(R.id.mv_describe)
+    @BindView(R.id.mv_describe)
     ImageView mvDescribe;
-    @Bind(R.id.mv_comment)
+    @BindView(R.id.mv_comment)
     ImageView mvComment;
-    @Bind(R.id.mv_relative)
+    @BindView(R.id.mv_relative)
     ImageView mvRelative;
-    @Bind(R.id.fl_content)
+    @BindView(R.id.fl_content)
     FrameLayout flContent;
     private int id;
     private MVDetailBean mvDetailBean;

@@ -18,7 +18,7 @@ import com.itheima.vmplayer.bean.YueDanBean;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -80,15 +80,15 @@ public class YueDanFragmentAdapter extends RecyclerView.Adapter<YueDanFragmentAd
     }
 
     class YueDanViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.iv_postimg)
+        @BindView(R.id.iv_postimg)
         ImageView ivPostimg;
-        @Bind(R.id.civ_img)
+        @BindView(R.id.civ_img)
         CircleImageView civImg;
-        @Bind(R.id.title)
+        @BindView(R.id.title)
         TextView title;
-        @Bind(R.id.author)
+        @BindView(R.id.author)
         TextView author;
-        @Bind(R.id.play_count)
+        @BindView(R.id.play_count)
         TextView playCount;
 
         public YueDanViewHolder(View itemView) {

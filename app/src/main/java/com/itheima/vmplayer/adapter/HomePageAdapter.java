@@ -21,7 +21,7 @@ import com.itheima.vmplayer.bean.VideoBean;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -137,19 +137,19 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.MyView
     }
 
     public class MyViewholder extends RecyclerView.ViewHolder{
-        @Bind(R.id.iv_item_logo)
+        @BindView(R.id.iv_item_logo)
         ImageView ivItemLogo;
-        @Bind(R.id.iv_contentimg)
+        @BindView(R.id.iv_contentimg)
         ImageView ivContentimg;
-        @Bind(R.id.iv_type)
+        @BindView(R.id.iv_type)
         ImageView ivType;
-        @Bind(R.id.viewbg)
+        @BindView(R.id.viewbg)
          View viewBg;
-        @Bind(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tvTitle;
-        @Bind(R.id.tv_description)
+        @BindView(R.id.tv_description)
         TextView tvDescription;
-        @Bind(R.id.rl_item_rootView)
+        @BindView(R.id.rl_item_rootView)
         RelativeLayout rlItemRootView;
 
         public MyViewholder(View itemView) {
