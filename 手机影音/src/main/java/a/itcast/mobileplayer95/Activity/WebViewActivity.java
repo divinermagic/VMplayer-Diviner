@@ -12,7 +12,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import a.itcast.mobileplayer95.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

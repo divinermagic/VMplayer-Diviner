@@ -9,7 +9,6 @@ import com.apkfuns.logutils.LogUtils;
 import java.io.IOException;
 import java.util.List;
 
-import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.AreaBean;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.fragment.Homepage.HomeMvp;

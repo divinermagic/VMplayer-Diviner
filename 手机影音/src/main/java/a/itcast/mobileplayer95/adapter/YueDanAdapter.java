@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import a.itcast.mobileplayer95.Activity.PlayerActivity;
-import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.bean.YueDanBean;
 import a.itcast.mobileplayer95.utils.Util;
 import butterknife.BindView;

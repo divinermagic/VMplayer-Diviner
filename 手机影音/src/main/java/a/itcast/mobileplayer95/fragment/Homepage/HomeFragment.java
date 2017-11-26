@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import a.itcast.mobileplayer95.BaseFragment;
-import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.HomeAdapter;
 import a.itcast.mobileplayer95.bean.VideoBean;
 import a.itcast.mobileplayer95.utils.LogUtils;
