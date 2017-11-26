@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import a.itcast.mobileplayer95.BaseFragment;
+import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.MvPageAdapter;
 import a.itcast.mobileplayer95.bean.AreaBean;
 import butterknife.BindView;

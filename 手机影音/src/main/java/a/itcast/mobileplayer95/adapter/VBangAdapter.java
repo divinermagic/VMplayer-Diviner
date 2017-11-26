@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.utils.Util;
 import butterknife.BindView;
 import butterknife.ButterKnife;

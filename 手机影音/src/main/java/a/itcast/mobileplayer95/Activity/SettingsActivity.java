@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import java.io.File;
 import java.text.DecimalFormat;
 
+import a.itcast.mobileplayer95.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

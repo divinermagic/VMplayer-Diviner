@@ -7,6 +7,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import a.itcast.mobileplayer95.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

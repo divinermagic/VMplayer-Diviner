@@ -12,6 +12,8 @@ import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
 
+import a.itcast.mobileplayer95.R;
+
 /**
  * Created by divinermagic on 2017/11/21.
  * @author Diviner

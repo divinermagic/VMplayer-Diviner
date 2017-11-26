@@ -19,6 +19,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
+import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.fragment.Homepage.HomeFragment;
 import a.itcast.mobileplayer95.fragment.Mvpage.MvFragment;
 import a.itcast.mobileplayer95.fragment.vbangpage.VbangFragment;

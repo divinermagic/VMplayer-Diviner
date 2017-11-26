@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import a.itcast.mobileplayer95.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

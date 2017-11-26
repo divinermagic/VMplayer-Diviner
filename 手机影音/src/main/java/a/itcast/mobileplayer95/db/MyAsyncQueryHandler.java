@@ -9,6 +9,7 @@ import a.itcast.mobileplayer95.utils.LogUtils;
 
 /**
  * Created by divinermagic on 2017/10/17.
+ * @author Diviner
  */
 
 public class MyAsyncQueryHandler extends AsyncQueryHandler {
