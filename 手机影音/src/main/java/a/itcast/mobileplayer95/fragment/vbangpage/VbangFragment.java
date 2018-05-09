@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import a.itcast.mobileplayer95.Activity.AudioPlayerActivity;
 import a.itcast.mobileplayer95.BaseFragment;
+import a.itcast.mobileplayer95.R;
 import a.itcast.mobileplayer95.adapter.VBangAdapter;
 import a.itcast.mobileplayer95.bean.MusicBean;
 import a.itcast.mobileplayer95.db.MyAsyncQueryHandler;

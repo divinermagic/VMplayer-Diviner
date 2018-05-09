@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import a.itcast.mobileplayer95.R;
+
 /**
  * 作者：Magic on 2017/9/5 19:28
  * 邮箱：bonian1852@163.com
